@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import PostList from './components/PostList.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h3>Skill Test Altacrest</h3>
+      <nav class="wrapper">
+        <RouterLink :to="{ name: 'home' }">POSTS</RouterLink>
+        <RouterLink :to="{ name: 'create-post' }">CREATE POST</RouterLink>
+      </nav>
   </div>
-  <PostList />
+  <RouterView />
 </template>
 
 <style scoped>
@@ -26,5 +25,10 @@ import PostList from './components/PostList.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 </style>
